@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package juice;
-
+//java -jar load.jar
 import com.email.durgesh.Email;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;
+import java.sql.*;
+
 
 
 /**
@@ -22,17 +24,19 @@ public class Invoice extends javax.swing.JFrame {
     /**
      * Creates new form Invoice
      */
+    int result;
     public Invoice() {
         initComponents();
             java.util.Random r = new java.util.Random();
             int start = 1111;
             int end = 9999;
-            int result = ThreadLocalRandom.current().nextInt(start, end + 1);
+            result = ThreadLocalRandom.current().nextInt(start, end + 1);
             invoice.setText(String.valueOf(result));
             Date d = new Date();
             SimpleDateFormat st = new SimpleDateFormat("dd:MM:yyyy");
             Date.setText(st.format(d));
     }
+    SimpleDateFormat st;
     public Invoice(String name,String email,String mobile,String adr,String type,String Price,String no_of_glasses,String total,String jn)
     {
         
@@ -43,7 +47,7 @@ public class Invoice extends javax.swing.JFrame {
         int result = ThreadLocalRandom.current().nextInt(start, end + 1);
         invoice.setText(String.valueOf(result));
         Date d = new Date();
-        SimpleDateFormat st = new SimpleDateFormat("dd:MM:yyyy");
+        st = new SimpleDateFormat("yyyy:MM:dd");
         Date.setText(st.format(d));
         naam.setText(name);
         emails.setText(email);
@@ -288,7 +292,7 @@ public class Invoice extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(shopcontact, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(shopadr, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)))
+                            .addComponent(shopadr, javax.swing.GroupLayout.PREFERRED_SIZE, 315, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,10 +414,10 @@ public class Invoice extends javax.swing.JFrame {
                                             .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addComponent(juice, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -423,25 +427,26 @@ public class Invoice extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(naam, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(emails, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(emails, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(Date, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Jtecxfie, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rate, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)))
+                            .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Jtecxfie, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rate, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
@@ -460,9 +465,9 @@ public class Invoice extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(net, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(mode, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -479,12 +484,13 @@ public class Invoice extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-        public void calculate() {
+    int net1;    
+    public void calculate() {
         String rt1=rate.getText();
         String no=number.getText();
         int rt=Integer.parseInt(rt1);
         int n1=Integer.parseInt(no);
-        int total1,sgst1,cgst1,net1;
+        int total1,sgst1,cgst1;
         total1=rt*n1;
         sgst1=total1*9/100;
         cgst1=total1*9/100;
@@ -515,35 +521,84 @@ public class Invoice extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
             JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via Cash");
-            mode.setEnabled(false); 
+            mode.setEnabled(false);
+            DataInsertion();
             res=1;
         } // TODO add your handling code here:
         else if(mode1=="Cheque")
         {
             JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
             JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via Cheque");
-            mode.setEnabled(false);  
+            mode.setEnabled(false); 
+            DataInsertion();
             res=1;
         }
         else if(mode1=="Card")
         {
             JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
             JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via Card");
-            mode.setEnabled(false);    
+            mode.setEnabled(false); 
+            DataInsertion();
             res=1;
         }
         else if(mode1=="UPI")
         {
             JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
             JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via UPI");
-            mode.setEnabled(false);  
+            mode.setEnabled(false);
+            DataInsertion();
             res=1;
         }
     } else {
             JOptionPane.showMessageDialog(null,"Firstly Calculate Then Go for Payment");
         }
     }//GEN-LAST:event_modeActionPerformed
-
+    String database="signup";
+    String url="jdbc:mysql://localhost:3306/"+database;
+    String username="root";
+    String password="";
+    String jdbc="com.mysql.cj.jdbc.Driver";
+    String createDatabase="create database  if not exists "+database;
+    String createTable="create table if not exists User_Details(Invoice int(4) primary key,Name varchar(50) not null,"
+            + "Contact bigint(10) not null,Mail_id varchar(50) not null, Residential_Address varchar(80) not null, "
+            + "Juice_Name varchar(30) not null,Glass_Type varchar(15) not null, Number_of_Glass int(1) not null, "
+            + "Net_Amount int(3) not null, "
+            + "Mode_Of_Payment varchar(15) not null,Date DATE not null);)";
+    String insertion="insert into User_Details(Invoice,Name,Contact,Mail_id,Residential_Address,Juice_Name,Glass_Type,"
+            + "Number_of_Glass,Net_Amount,Mode_Of_Payment,Date) values (?,?,?,?,?,?,?,?,?,?,?)";
+    public void DataInsertion() {
+        try {
+            Class.forName(jdbc);
+            Connection con=DriverManager.getConnection(url,username,password);
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate(createDatabase);
+            stmt.executeUpdate(createTable);
+            System.out.println("Table Created");
+            PreparedStatement pstmt=con.prepareStatement(insertion);
+            pstmt.setInt(1,result);
+            pstmt.setString(2,naam.getText());
+            String c=contact.getText();
+            Long cont=Long.parseLong(c);
+            pstmt.setLong(3,cont);
+            pstmt.setString(4,emails.getText());
+            pstmt.setString(5,address.getText());
+            pstmt.setString(6,juice.getText());
+            pstmt.setString(7,Type.getText());
+            String n=number.getText();
+            int num=Integer.parseInt(n);
+            pstmt.setInt(8,num);
+            pstmt.setInt(9,net1);
+            pstmt.setString(10,mode.getSelectedItem().toString());
+            java.util.Date date=new java.util.Date();
+            java.sql.Date sqlDate=new java.sql.Date(date.getTime());
+            pstmt.setDate(11,sqlDate);
+            pstmt.executeQuery();
+            System.out.println("Data Inserted");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String shn=shopname.getText();
         String shc=shopcontact.getText();
