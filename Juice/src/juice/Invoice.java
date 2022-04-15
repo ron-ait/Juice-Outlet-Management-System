@@ -5,6 +5,7 @@
  */
 package juice;
 //java -jar load.jar
+
 import com.email.durgesh.Email;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,34 +13,33 @@ import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;
 import java.sql.*;
 
-
-
 /**
  *
  * @author Aman Pathak
  */
-import java.io.FileOutputStream;
 public class Invoice extends javax.swing.JFrame {
 
     /**
      * Creates new form Invoice
      */
     int result;
+
     public Invoice() {
         initComponents();
-            java.util.Random r = new java.util.Random();
-            int start = 1111;
-            int end = 9999;
-            result = ThreadLocalRandom.current().nextInt(start, end + 1);
-            invoice.setText(String.valueOf(result));
-            Date d = new Date();
-            SimpleDateFormat st = new SimpleDateFormat("dd:MM:yyyy");
-            Date.setText(st.format(d));
+        java.util.Random r = new java.util.Random();
+        int start = 1111;
+        int end = 9999;
+        result = ThreadLocalRandom.current().nextInt(start, end + 1);
+        invoice.setText(String.valueOf(result));
+        JOptionPane.showMessageDialog(null, result);
+        Date d = new Date();
+        SimpleDateFormat st = new SimpleDateFormat("dd:MM:yyyy");
+        Date.setText(st.format(d));
     }
     SimpleDateFormat st;
-    public Invoice(String name,String email,String mobile,String adr,String type,String Price,String no_of_glasses,String total,String jn)
-    {
-        
+
+    public Invoice(String name, String email, String mobile, String adr, String type, String Price, String no_of_glasses, String total, String jn) {
+
         initComponents();
         java.util.Random r = new java.util.Random();
         int start = 1111;
@@ -56,13 +56,9 @@ public class Invoice extends javax.swing.JFrame {
         Type.setText(type);
         t1.setText(total);
         rate.setText(Price);
-        number.setText(no_of_glasses); 
+        number.setText(no_of_glasses);
         juice.setText(jn);
     }
-
-    
-
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -319,71 +315,73 @@ public class Invoice extends javax.swing.JFrame {
                                 .addGap(0, 2, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(65, 65, 65)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(206, 206, 206)))))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator5)
+                                .addGap(206, 206, 206))))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(net, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(93, 93, 93))
+                            .addComponent(jSeparator5)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(net, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(93, 93, 93))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(naam, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel10)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(naam, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(emails, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(30, 30, 30))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(121, 121, 121)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(juice, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Jtecxfie, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(emails, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(30, 30, 30))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(121, 121, 121)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(juice, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Jtecxfie, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rate, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addGap(30, 30, 30)
-                                .addComponent(cgst, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(jLabel21)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addComponent(rate, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(cgst, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(39, 39, 39)
+                                        .addComponent(jLabel21)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(372, 372, 372))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(359, 359, 359))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(328, 328, 328))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,178 +482,235 @@ public class Invoice extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    int net1;    
+    int net1;
+
     public void calculate() {
-        String rt1=rate.getText();
-        String no=number.getText();
-        int rt=Integer.parseInt(rt1);
-        int n1=Integer.parseInt(no);
-        int total1,sgst1,cgst1;
-        total1=rt*n1;
-        sgst1=total1*9/100;
-        cgst1=total1*9/100;
-        net1=total1+cgst1+sgst1;
-        String t1=String.valueOf(total1);
-        String s1=String.valueOf(sgst1);
-        String c1=String.valueOf(cgst1);
-        String ne1=String.valueOf(net1);
-        number.setText(t1);
+        String rt1 = rate.getText();
+        String no = number.getText();
+        int rt = Integer.parseInt(rt1);
+        int n1 = Integer.parseInt(no);
+        int total1, sgst1, cgst1;
+        total1 = rt * n1;
+        sgst1 = total1 * 9 / 100;
+        cgst1 = total1 * 9 / 100;
+        net1 = total1 + cgst1 + sgst1;
+        String t1 = String.valueOf(total1);
+        String s1 = String.valueOf(sgst1);
+        String c1 = String.valueOf(cgst1);
+        String ne1 = String.valueOf(net1);
+        String n_glasses = String.valueOf(n1);
+        number.setText(n_glasses);
         cgst.setText(c1);
         sgst.setText(s1);
         net.setText(ne1);
-        }
-        int flag;
+    }
+    int flag;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       calculate();
+        calculate();
         //JOptionPane.showMessageDialog(null,"Calculation is Completed! Now GO with Payment Method.");
         jButton2.setEnabled(false);
-        flag=1;
+        flag = 1;
     }//GEN-LAST:event_jButton2ActionPerformed
     int res;
     private void modeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeActionPerformed
-        String mode1=mode.getSelectedItem().toString();
-        String total=net.getText();
-        String name=naam.getText();
-        if(flag==1) {
-        if(mode1=="Cash")
-        {
-            JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
-            JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via Cash");
-            mode.setEnabled(false);
-            DataInsertion();
-            res=1;
-        } // TODO add your handling code here:
-        else if(mode1=="Cheque")
-        {
-            JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
-            JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via Cheque");
-            mode.setEnabled(false); 
-            DataInsertion();
-            res=1;
-        }
-        else if(mode1=="Card")
-        {
-            JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
-            JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via Card");
-            mode.setEnabled(false); 
-            DataInsertion();
-            res=1;
-        }
-        else if(mode1=="UPI")
-        {
-            JOptionPane.showMessageDialog(null,""+total+" Amount Paid By "+name);
-            JOptionPane.showMessageDialog(null,"Thank You For Making Payment Via UPI");
-            mode.setEnabled(false);
-            DataInsertion();
-            res=1;
-        }
-    } else {
-            JOptionPane.showMessageDialog(null,"Firstly Calculate Then Go for Payment");
+        String mode1 = mode.getSelectedItem().toString();
+        String total = net.getText();
+        String name = naam.getText();
+        if (flag == 1) {
+            if (mode1 == "Cash") {
+                JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
+                JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via Cash");
+                mode.setEnabled(false);
+                DataInsertion();
+                res = 1;
+            } // TODO add your handling code here:
+            else if (mode1 == "Cheque") {
+                JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
+                JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via Cheque");
+                mode.setEnabled(false);
+                DataInsertion();
+                res = 1;
+            } else if (mode1 == "Card") {
+                JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
+                JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via Card");
+                mode.setEnabled(false);
+                DataInsertion();
+                res = 1;
+            } else if (mode1 == "UPI") {
+                JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
+                JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via UPI");
+                mode.setEnabled(false);
+                DataInsertion();
+                res = 1;
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Firstly Calculate Then Go for Payment");
         }
     }//GEN-LAST:event_modeActionPerformed
-    String database="signup";
-    String url="jdbc:mysql://localhost:3306/"+database;
-    String username="root";
-    String password="";
-    String jdbc="com.mysql.cj.jdbc.Driver";
-    String createDatabase="create database  if not exists "+database;
-    String createTable="create table if not exists User_Details(Invoice int(4) primary key,Name varchar(50) not null,"
+    Boolean databaseExists = false;
+    Connection con;
+    ResultSet rs;
+    Statement stmt;
+    PreparedStatement pstmt;
+    String database = "Juice";
+    String url = "jdbc:mysql://localhost:3306/";
+    String username = "Shivkant";
+    String password = "Shivkant@1234";
+    String jdbc = "com.mysql.cj.jdbc.Driver";
+    String checkIfDatabaseExixtsSQL = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME='" + database + "'";
+    String createDatabase = "create database  if not exists " + database;
+    String createTable = "create table if not exists User_Details(Invoice int(4) primary key,Name varchar(50) not null,"
             + "Contact bigint(10) not null,Mail_id varchar(50) not null, Residential_Address varchar(80) not null, "
             + "Juice_Name varchar(30) not null,Glass_Type varchar(15) not null, Number_of_Glass int(1) not null, "
             + "Net_Amount int(3) not null, "
-            + "Mode_Of_Payment varchar(15) not null,Date DATE not null);)";
-    String insertion="insert into User_Details(Invoice,Name,Contact,Mail_id,Residential_Address,Juice_Name,Glass_Type,"
+            + "Mode_Of_Payment varchar(15) not null,Date DATE not null)";
+    String insertion = "insert into User_Details(Invoice,Name,Contact,Mail_id,Residential_Address,Juice_Name,Glass_Type,"
             + "Number_of_Glass,Net_Amount,Mode_Of_Payment,Date) values (?,?,?,?,?,?,?,?,?,?,?)";
+
     public void DataInsertion() {
         try {
             Class.forName(jdbc);
-            Connection con=DriverManager.getConnection(url,username,password);
-            Statement stmt = con.createStatement();
-            stmt.executeUpdate(createDatabase);
-            stmt.executeUpdate(createTable);
-            System.out.println("Table Created");
-            PreparedStatement pstmt=con.prepareStatement(insertion);
-            pstmt.setInt(1,result);
-            pstmt.setString(2,naam.getText());
-            String c=contact.getText();
-            Long cont=Long.parseLong(c);
-            pstmt.setLong(3,cont);
-            pstmt.setString(4,emails.getText());
-            pstmt.setString(5,address.getText());
-            pstmt.setString(6,juice.getText());
-            pstmt.setString(7,Type.getText());
-            String n=number.getText();
-            int num=Integer.parseInt(n);
-            pstmt.setInt(8,num);
-            pstmt.setInt(9,net1);
-            pstmt.setString(10,mode.getSelectedItem().toString());
-            java.util.Date date=new java.util.Date();
-            java.sql.Date sqlDate=new java.sql.Date(date.getTime());
-            pstmt.setDate(11,sqlDate);
-            pstmt.executeQuery();
-            System.out.println("Data Inserted");
-        } catch(Exception e) {
+            con = DriverManager.getConnection(url, username, password);
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(checkIfDatabaseExixtsSQL);
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Database Found");
+                databaseExists = true;
+                //Connecting to Existing Data
+                con = DriverManager.getConnection(url + database, username, password);
+                JOptionPane.showMessageDialog(null, "Connected to Existing Data = " + database);
+
+                // Data Insertion started
+//                    stmt.executeUpdate(createTable);
+//                    System.out.println("Table Created");
+                pstmt = con.prepareStatement(insertion);
+                String inv = invoice.getText();
+                int invoicedb = Integer.parseInt(inv);
+                pstmt.setInt(1, invoicedb);
+                pstmt.setString(2, naam.getText());
+                String c = contact.getText();
+                Long cont = Long.parseLong(c);
+                pstmt.setLong(3, cont);
+                pstmt.setString(4, emails.getText());
+                pstmt.setString(5, address.getText());
+                pstmt.setString(6, juice.getText());
+                pstmt.setString(7, Type.getText());
+                String n = number.getText();
+                int num = Integer.parseInt(n);
+                pstmt.setInt(8, num);
+                pstmt.setInt(9, net1);
+                pstmt.setString(10, mode.getSelectedItem().toString());
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                pstmt.setDate(11, sqlDate);
+                int updateData = pstmt.executeUpdate();
+                if (updateData > 0) {
+                    System.out.println("Data has been Started!!!");
+                }
+
+            }
+            if (!databaseExists) {
+                JOptionPane.showMessageDialog(null, "Database Not Found");
+                JOptionPane.showMessageDialog(null, "Creating new Database");
+                int databaseCreated = stmt.executeUpdate(createDatabase);
+                if (databaseCreated > 0) {
+                    JOptionPane.showMessageDialog(null, database + " Database Created");
+                    //to connect newly create Database
+                    con = DriverManager.getConnection(url + database, username, password);
+                    stmt = con.createStatement();
+                    stmt.executeUpdate(createTable);
+                    System.out.println("Table Created");
+                    pstmt = con.prepareStatement(insertion);
+                    String inv = invoice.getText();
+                    int invoicedb = Integer.parseInt(inv);
+                    pstmt.setInt(1, invoicedb);
+                    pstmt.setString(2, naam.getText());
+                    String c = contact.getText();
+                    Long cont = Long.parseLong(c);
+                    pstmt.setLong(3, cont);
+                    pstmt.setString(4, emails.getText());
+                    pstmt.setString(5, address.getText());
+                    pstmt.setString(6, juice.getText());
+                    pstmt.setString(7, Type.getText());
+                    String n = number.getText();
+                    int num = Integer.parseInt(n);
+                    pstmt.setInt(8, num);
+                    pstmt.setInt(9, net1);
+                    pstmt.setString(10, mode.getSelectedItem().toString());
+                    java.util.Date date = new java.util.Date();
+                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                    pstmt.setDate(11, sqlDate);
+                    int updateData = pstmt.executeUpdate();
+                    if (updateData > 0) {
+                        System.out.println("Data has been Started!!!");
+                    }
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
+//        } catch(Exception e) {
+//            e.printStackTrace();
     }
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String shn=shopname.getText();
-        String shc=shopcontact.getText();
-        String shm=shopmail.getText();
-        String shadr=shopadr.getText();
-        String in=invoice.getText();
-        String ju=juice.getText();
-        String date=Date.getText();
-        String name=naam.getText();
-        String mob=contact.getText();
-        String mails=emails.getText();
-        String adr=address.getText();
-        String type=Type.getText();
-        String total=t1.getText();
-        String ra=rate.getText();
-        String num=number.getText();
-        String gst1=cgst.getText();
-        String gst2=sgst.getText();
-        String finall=net.getText();
-        String mod=mode.getSelectedItem().toString();
-        if(res==1) {
+        String shn = shopname.getText();
+        String shc = shopcontact.getText();
+        String shm = shopmail.getText();
+        String shadr = shopadr.getText();
+        String in = invoice.getText();
+        String ju = juice.getText();
+        String date = Date.getText();
+        String name = naam.getText();
+        String mob = contact.getText();
+        String mails = emails.getText();
+        String adr = address.getText();
+        String type = Type.getText();
+        String total = t1.getText();
+        String ra = rate.getText();
+        String num = number.getText();
+        String gst1 = cgst.getText();
+        String gst2 = sgst.getText();
+        String finall = net.getText();
+        String mod = mode.getSelectedItem().toString();
+        if (res == 1) {
             try {
-             Email email = new Email("avianvista@gmail.com", "tumchutiyahoavian");
-                        email.setFrom("avianvista", "Pathak SahaB");
-                        email.setSubject("Bill Reciept");
-                        email.setContent("<body style=\"background-color:white;\"><font color=\"#0001200\">"
-                                + "Shop Name: " + shn + "<br>"
-                                + "Shop's Contact Number: " + shc + "<br>"
-                                + "Shop's Email Address: " + shm + "<br>"
-                                + "Shop's Address: " + shadr + "<br>"
-                                + "Customer Details"+"<br><br>"
-                                + "Invoice Number: "+in+ "<br>"
-                                + "Juice Name: "+ju+ "<br>"
-                                + "Date: " +date+ "<br>" 
-                                + "Customer Name: " + name + "<br>"
-                                + "Customer's Mobile Number: " + mob + "<br>"
-                                + "Customer's E mail Id: " + mails + "<br>"
-                                + "Glass Typye: " + type + "<br>"
-                                + "Number of Glasses: "  + num + "<br>"
-                                + "Per Glass Price: " + ra + "<br>" 
-                                + "Total Price(Without Tax): " +total+ "<br>"
-                                + "CGST: " +gst1+ "<br>"
-                                + "SGST: " +gst2+ "<br>"
-                                + "Total Amount(With All Taxes): " +finall+ "<br>"
-                                + "Payment Mode by Customer: " + mod + "<br>"
-                                + "Thanks for Visiting Us. Hope You Enjoy Your Juice/Shake"
-                                +"\n</font></body>", "text/html");
-                        String mail = emails.getText();
-                        email.addRecipient(mail);
-                        email.addRecipient("avianvista@gmail.com");
-                        email.send();
-                        this.dispose();
-            } catch(Exception e) {
+                Email email = new Email("avianvista@gmail.com", "tumchutiyahoavian");
+                email.setFrom("avianvista", "Pathak SahaB");
+                email.setSubject("Bill Reciept");
+                email.setContent("<body style=\"background-color:white;\"><font color=\"#0001200\">"
+                        + "Shop Name: " + shn + "<br>"
+                        + "Shop's Contact Number: " + shc + "<br>"
+                        + "Shop's Email Address: " + shm + "<br>"
+                        + "Shop's Address: " + shadr + "<br>"
+                        + "Customer Details" + "<br><br>"
+                        + "Invoice Number: " + in + "<br>"
+                        + "Juice Name: " + ju + "<br>"
+                        + "Date: " + date + "<br>"
+                        + "Customer Name: " + name + "<br>"
+                        + "Customer's Mobile Number: " + mob + "<br>"
+                        + "Customer's E mail Id: " + mails + "<br>"
+                        + "Glass Typye: " + type + "<br>"
+                        + "Number of Glasses: " + num + "<br>"
+                        + "Per Glass Price: " + ra + "<br>"
+                        + "Total Price(Without Tax): " + total + "<br>"
+                        + "CGST: " + gst1 + "<br>"
+                        + "SGST: " + gst2 + "<br>"
+                        + "Total Amount(With All Taxes): " + finall + "<br>"
+                        + "Payment Mode by Customer: " + mod + "<br>"
+                        + "Thanks for Visiting Us. Hope You Enjoy Your Juice/Shake"
+                        + "\n</font></body>", "text/html");
+                String mail = emails.getText();
+                email.addRecipient(mail);
+                email.addRecipient("avianvista@gmail.com");
+                email.send();
+                this.dispose();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-             JOptionPane.showMessageDialog(null,"After Paying the Bill, You will Get Bill Reciepts on Your Mail ID");
+            JOptionPane.showMessageDialog(null, "After Paying the Bill, You will Get Bill Reciepts on Your Mail ID");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -101,7 +101,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel9" alignment="1" min="-2" pref="192" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="1" min="-2" pref="214" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

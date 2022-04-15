@@ -142,7 +142,7 @@ public class CustomerDetails extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 153, 153));
-        jLabel15.setText(" :- Pathak SahaB");
+        jLabel15.setText(" :- Aman Pathak");
         jLabel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
