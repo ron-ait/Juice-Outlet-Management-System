@@ -197,7 +197,7 @@ public class OrangeGlass extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addContainerGap())
         );
 
         pack();
@@ -221,11 +221,11 @@ public class OrangeGlass extends javax.swing.JFrame {
         String juicename="Orange Juice";
         if(type.getSelectedIndex()==0)
         {
-            JOptionPane.showMessageDialog(null,"Please Atleast Select One Type Of Glass");
+            JOptionPane.showMessageDialog(null,"Please Atleast Select One Type Of Glass", "Error" , JOptionPane.ERROR_MESSAGE);
         }// TODO add your handling code here:
         else if(no_of_glasses.getSelectedIndex()==0)
         {
-            JOptionPane.showMessageDialog(null,"Please Select Atleast One Glass");
+            JOptionPane.showMessageDialog(null,"Please Select Atleast One Glass", "Error" , JOptionPane.ERROR_MESSAGE);
         }
         else
         {

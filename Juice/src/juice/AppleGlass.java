@@ -219,11 +219,11 @@ public class AppleGlass extends javax.swing.JFrame {
         String juicename="Apple Juice";
         if(type.getSelectedIndex()==0)
         {
-            JOptionPane.showMessageDialog(null,"Please Atleast Select One Type Of Glass");
+            JOptionPane.showMessageDialog(null,"Please Atleast Select One Type Of Glass", "Error" , JOptionPane.ERROR_MESSAGE);
         }// TODO add your handling code here:
         else if(no_of_glasses.getSelectedIndex()==0)
         {
-            JOptionPane.showMessageDialog(null,"Please Select Atleast One Glass");
+            JOptionPane.showMessageDialog(null,"Please Select Atleast One Glass", "Error" , JOptionPane.ERROR_MESSAGE);
         }
         else 
         {

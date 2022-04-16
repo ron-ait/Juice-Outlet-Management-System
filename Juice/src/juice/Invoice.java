@@ -6,7 +6,6 @@
 package juice;
 //java -jar load.jar
 
-import com.email.durgesh.Email;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
@@ -95,7 +94,6 @@ public class Invoice extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         mode = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         invoice = new javax.swing.JLabel();
@@ -192,13 +190,6 @@ public class Invoice extends javax.swing.JFrame {
         mode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modeActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Bill Reciept to Mail");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -312,13 +303,7 @@ public class Invoice extends javax.swing.JFrame {
                                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(mode, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 2, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(206, 206, 206))))
+                                .addGap(0, 2, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,6 +367,10 @@ public class Invoice extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(328, 328, 328))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(391, 391, 391)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -468,9 +457,7 @@ public class Invoice extends javax.swing.JFrame {
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(mode, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -517,26 +504,26 @@ public class Invoice extends javax.swing.JFrame {
         String total = net.getText();
         String name = naam.getText();
         if (flag == 1) {
-            if (mode1 == "Cash") {
+            if(mode1.equals("Cash")) {
                 JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
                 JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via Cash");
                 mode.setEnabled(false);
                 DataInsertion();
                 res = 1;
             } // TODO add your handling code here:
-            else if (mode1 == "Cheque") {
+            else if (mode1.equals("Cheque")) {
                 JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
                 JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via Cheque");
                 mode.setEnabled(false);
                 DataInsertion();
                 res = 1;
-            } else if (mode1 == "Card") {
+            } else if (mode1.equals("Card")) {
                 JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
                 JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via Card");
                 mode.setEnabled(false);
                 DataInsertion();
                 res = 1;
-            } else if (mode1 == "UPI") {
+            } else if (mode1.equals("UPI")) {
                 JOptionPane.showMessageDialog(null, "" + total + " Amount Paid By " + name);
                 JOptionPane.showMessageDialog(null, "Thank You For Making Payment Via UPI");
                 mode.setEnabled(false);
@@ -654,66 +641,6 @@ public class Invoice extends javax.swing.JFrame {
 //            e.printStackTrace();
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String shn = shopname.getText();
-        String shc = shopcontact.getText();
-        String shm = shopmail.getText();
-        String shadr = shopadr.getText();
-        String in = invoice.getText();
-        String ju = juice.getText();
-        String date = Date.getText();
-        String name = naam.getText();
-        String mob = contact.getText();
-        String mails = emails.getText();
-        String adr = address.getText();
-        String type = Type.getText();
-        String total = t1.getText();
-        String ra = rate.getText();
-        String num = number.getText();
-        String gst1 = cgst.getText();
-        String gst2 = sgst.getText();
-        String finall = net.getText();
-        String mod = mode.getSelectedItem().toString();
-        if (res == 1) {
-            try {
-                Email email = new Email("avianvista@gmail.com", "tumchutiyahoavian");
-                email.setFrom("avianvista", "Pathak SahaB");
-                email.setSubject("Bill Reciept");
-                email.setContent("<body style=\"background-color:white;\"><font color=\"#0001200\">"
-                        + "Shop Name: " + shn + "<br>"
-                        + "Shop's Contact Number: " + shc + "<br>"
-                        + "Shop's Email Address: " + shm + "<br>"
-                        + "Shop's Address: " + shadr + "<br>"
-                        + "Customer Details" + "<br><br>"
-                        + "Invoice Number: " + in + "<br>"
-                        + "Juice Name: " + ju + "<br>"
-                        + "Date: " + date + "<br>"
-                        + "Customer Name: " + name + "<br>"
-                        + "Customer's Mobile Number: " + mob + "<br>"
-                        + "Customer's E mail Id: " + mails + "<br>"
-                        + "Glass Typye: " + type + "<br>"
-                        + "Number of Glasses: " + num + "<br>"
-                        + "Per Glass Price: " + ra + "<br>"
-                        + "Total Price(Without Tax): " + total + "<br>"
-                        + "CGST: " + gst1 + "<br>"
-                        + "SGST: " + gst2 + "<br>"
-                        + "Total Amount(With All Taxes): " + finall + "<br>"
-                        + "Payment Mode by Customer: " + mod + "<br>"
-                        + "Thanks for Visiting Us. Hope You Enjoy Your Juice/Shake"
-                        + "\n</font></body>", "text/html");
-                String mail = emails.getText();
-                email.addRecipient(mail);
-                email.addRecipient("avianvista@gmail.com");
-                email.send();
-                this.dispose();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "After Paying the Bill, You will Get Bill Reciepts on Your Mail ID");
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -756,7 +683,6 @@ public class Invoice extends javax.swing.JFrame {
     private javax.swing.JLabel contact;
     private javax.swing.JLabel emails;
     private javax.swing.JLabel invoice;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
